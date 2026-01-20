@@ -5,7 +5,6 @@ const ProjectSchema = new mongoose.Schema({
   description: { type: String, required: true },
   category: {
     type: String,
-    enum: ["Marketing Digital", "Diseño Gráfico", "Web Design"],
     required: true,
   },
   imageUrl: { type: String }, // Aquí irá el link de la imagen de tu trabajo

@@ -12,7 +12,6 @@ router.post("/add", async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 });
-
 // RUTA PARA VER TODOS LOS PROYECTOS (GET)
 router.get("/all", async (req, res) => {
   try {
