@@ -21,5 +21,15 @@ router.get("/all", async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
-
+// Ruta para eliminar un proyecto por ID
+router.delete("/:id", async (req, res) => {
+  try {
+    const deletedProject = await Project.findByIdAndDelete(req.params.id);
+    if (!deletedProject)
+      return res.status(404).json({ message: "Proyecto no encontrado" });
+    res.json({ message: "Proyecto eliminado correctamente" });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
 module.exports = router;
